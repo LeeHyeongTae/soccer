@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
 @Data
 public class PlayerDTO {
  public String playerId, playerName, ePlayerName, nickname, joinYyyy, position, backNo, nation, birthDate, solar,
-                height, weight, teamId;
+         height, weight, teamId;
 }
