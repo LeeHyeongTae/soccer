@@ -5,7 +5,7 @@
 <mapper namespace="com.tedbitcamp.web.mappers.PlayerMapper">
     <select id="selectAll" resultType="com.tedbitcamp.web.domains.PlayerDTO">
         select
-            playe_id playerId,
+            player_id playerId,
             player_name playerName,
             e_player_name ePlayerName,
             nickname,

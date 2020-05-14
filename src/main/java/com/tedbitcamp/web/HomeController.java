@@ -9,6 +9,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(){
-        return "안녕 그래들!";
+        return "스프링부트";
     }
 }

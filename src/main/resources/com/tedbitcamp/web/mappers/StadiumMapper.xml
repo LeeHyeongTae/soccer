@@ -2,4 +2,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.tedbitcamp.web.mappers.StadiumMapper"></mapper>
+<mapper namespace="com.tedbitcamp.web.mappers.StadiumMapper">
+    <select id="selectAll" resultType="com.tedbitcamp.web.domains.StadiumDTO">
+        select
+        stadium_id stadiumId, stadium_name stadiumName, hometeam_id hometeamId, seat_count seatCount, address, ddd, tel
+        from stadium
+    </select>
+</mapper>
