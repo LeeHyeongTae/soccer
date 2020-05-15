@@ -45,5 +45,5 @@ export default new VueRouter({
 * equal(){
 * this.current = `${this.operator((ParseFloat(this.previous),parseFloat(this.current)))}`
 * this.previous = null
-* }
-* */
+* ㅇㅇㅇ}
+*/
