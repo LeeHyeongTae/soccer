@@ -2,7 +2,7 @@
     <div id="app">
         <layout>
             <template #header="header">
-                <h1 id="title">{{header.title}}</h1>
+                <router-link to="/home"><h1 id="title">{{header.title}}</h1></router-link>
                 <router-link to="/join"><span id="join">{{header.join}}</span></router-link>
                 <router-link to="/login"><span id="login">{{header.login}}</span></router-link>
             </template>
@@ -28,7 +28,7 @@
     export default {
         name: "Home",
         components : {Layout},
-        data : ()=>{
+        data(){
             return {
                 sidebars : [
                     {menu: '쓰기'},
@@ -52,5 +52,4 @@
     #login{margin-right: 50px; float: right}
     #join{margin-right: 50px; float: right}
     #footer{width: 300px; margin: 0 auto}
-    #content{font-style: italic; font-size: medium}
 </style>
