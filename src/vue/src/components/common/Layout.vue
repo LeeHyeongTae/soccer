@@ -1,16 +1,16 @@
 <template>
     <div id="wrapper">
         <header>
-            <slot name="header" v-bind:title="header" v-bind:login="login" v-bind:signup="signup"></slot>
+           <slot name="header" :title="header" :login="login" :join="join"></slot>
         </header>
         <aside id="sidebar">
-
+            <slot name="sidebar"></slot>
         </aside>
         <section id="content">
-
+            <slot name="content" :content="content"></slot>
         </section>
         <footer>
-
+           <slot name="footer" :footer="footer"></slot>
         </footer>
     </div>
 </template>
@@ -20,9 +20,11 @@
         name: "Layout",
         data: ()=>{
             return {
-                header : "헤더",
-                login : "로그인",
-                signup : "회원가입"
+                header : '축구정보시스템',
+                login : '로그인',
+                join : '회원가입',
+                content : '축구 경기 일정 검색',
+                footer : '(사) 축구선수협회'
             }
         }
     }
