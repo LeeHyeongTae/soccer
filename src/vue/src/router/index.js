@@ -3,6 +3,13 @@ import VueRouter from 'vue-router';
 import Join from "../components/member/Join";
 import Login from "../components/member/Login";
 import Calculator from "../components/common/Calculator";
+import Counter from "../components/common/Counter";
+import Register from "../components/member/Register";
+import List from "../components/member/List";
+import Search from "../components/member/Search";
+import Update from "../components/member/Update";
+import Delete from "../components/member/Delete";
+import VuexCounter from "../components/common/VuexCounter";
 
 Vue.use(VueRouter)
 export default new VueRouter({
@@ -11,39 +18,12 @@ export default new VueRouter({
         {path: '/join', component: Join},
         {path: '/login', component: Login},
         {path: '/calculator', component: Calculator},
+        {path: '/counter', component: Counter},
+        {path: '/vuexCounter', component: VuexCounter},
+        {path: '/register', component: Register},
+        {path: '/list', component: List},
+        {path: '/search', component: Search},
+        {path: '/update', component: Update},
+        {path: '/delete', component: Delete}
     ]
 })
-/*
-* methods:{
-* clear(){this.current = ''},
-* setPrevious(){
-* this.previous = this.current
-* this.operatorClicked = true},
-* append(number){
-* if(this.operatorClicked){
-* this.current = ''
-* this.operatorClicked = false
-* }
-* this.current = `${this.current}${number}`
-* },
-* add(){
-* this.operator = (a, b) => a + b
-* this.setPrevious()
-* },
-* minus(){
-* this.operator = (a, b) => a - b
-* this.setPrevious()
-* },
-* times(){
-* this.oprator = (a, b) => a * b
-* this.setPrevious()
-* },
-* divide(){
-* this.operator =(a, b) => a / b
-* this.setPrevious()
-* },
-* equal(){
-* this.current = `${this.operator((ParseFloat(this.previous),parseFloat(this.current)))}`
-* this.previous = null
-* ㅇㅇㅇ}
-*/

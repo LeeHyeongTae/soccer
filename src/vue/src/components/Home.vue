@@ -9,7 +9,8 @@
             <template #sidebar>
                 <ul class="menu">
                     <li v-for="i of sidebars" :key="i.menu">
-                        {{i.menu}}
+                        <router-link :to="{path:i.link}">{{i.menu}}</router-link>
+<!--                        <a @click="side(i.menu)">{{i.menu}}</a>-->
                     </li>
                 </ul>
             </template>
@@ -31,18 +32,32 @@
         data(){
             return {
                 sidebars : [
-                    {menu: '쓰기'},
-                    {menu: '목록'},
-                    {menu: '검색'},
-                    {menu: '수정'},
-                    {menu: '삭제'}
+                    {menu: '등록',link:'/register'},
+                    {menu: '목록',link:'/list'},
+                    {menu: '검색',link:'/search'},
+                    {menu: '수정',link:'/update'},
+                    {menu: '삭제',link:'/delete'},
+                    {menu: '회원수', link:'/vuexCounter'}
                 ]
             }
         }
+        // methods: {
+        //     side(){
+        //         switch (i) {
+        //             case '0': alert(); break;
+        //             case '1': break;
+        //             case '2': break;
+        //             case '3': break;
+        //             case '4': break;
+        //             case '5': break;
+        //         }
+        //     }
+        // }
     }
 </script>
 <style scoped>
     ul.menu{
+        ;
         position: relative;
         padding: 5px;
         list-style: none;
