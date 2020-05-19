@@ -1,16 +1,14 @@
 <template>
     <div>
-    <form method="post">
         <div class="imgcontainer">
-            <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+            <img src="https://couma.co.kr/data/kakaoimage/20190729101236.jpg" alt="Avatar" class="avatar">
         </div>
-
         <div class="container">
             <label><b>Username</b></label>
             <input type="text" @keyup.enter="moveToPasswd" v-model="userid" placeholder="Enter Username" name="userid" required>
             <h3>입력한 아이디: {{userid}}</h3>
             <label><b>Password</b></label>
-            <input type="password" v-model="passwd" placeholder="Enter Password" name="passwd" required>
+            <input type="password" @keyup.enter="login_button" v-model="passwd" placeholder="Enter Password" id="passwd" required>
             <h3>입력한 비번: {{passwd}}</h3>
             <button type="submit" @click="login_button">Login</button>
             <label>
@@ -22,7 +20,6 @@
             <router-link to="/Counter"><button type="button" class="cancelbtn">Cancel</button></router-link>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
-    </form>
     </div>
 </template>
 
