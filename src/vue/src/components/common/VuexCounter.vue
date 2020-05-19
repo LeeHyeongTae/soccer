@@ -8,7 +8,7 @@
     <button @click="incrementIfOdd" class="btn">Increment If Odd</button>
         <br>
     <button @click="incrementAsync" class="btn">Increment Async</button>
-        <div>최근 5개 값의 로그: {{recentHistory}}</div>
+        <div class="display">최근 5개 값의 로그: {{recentHistory}}</div>
     </div>
 </template>
 

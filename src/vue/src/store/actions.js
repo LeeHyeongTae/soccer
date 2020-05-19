@@ -9,3 +9,5 @@ export const incrementAsync = ({commit}) => {
         commit('increment')
     }, 1000)
 }
+export const login_button = ({commit}) => {commit('login_button')}
+export const register_button = ({commit}) => {commit('register_button')}

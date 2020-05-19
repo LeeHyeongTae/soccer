@@ -15,7 +15,7 @@
                 </ul>
             </template>
             <template #content>
-                <router-view/>
+                <router-view><img src="../assets/pepe.jpg"></router-view>
             </template>
             <template #footer="footer">
                 <h3 id="footer">{{footer.footer}}</h3>
