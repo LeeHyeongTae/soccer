@@ -19,8 +19,8 @@
             'count',
             'recentHistory'
         ]),
-        methods: mapActions([
-            'increment', //dispath
+        methods: mapActions([//dispath
+            'increment',
             'decrement',
             'incrementIfOdd',
             'incrementAsync'

@@ -5,7 +5,7 @@
         </div>
         <div class="container">
             <label><b>Username</b></label>
-            <input type="text" @keyup.enter="moveToPasswd" v-model="userid" placeholder="Enter Username" name="userid" required>
+            <input type="text" @keyup.enter="moveToPasswd" v-model="userid" placeholder="Enter Username" required>
             <h3>입력한 아이디: {{userid}}</h3>
             <label><b>Password</b></label>
             <input type="password" @keyup.enter="login_button" v-model="passwd" placeholder="Enter Password" id="passwd" required>
@@ -33,7 +33,7 @@
         },
         methods: {
             login_button(){
-                alert('로그인')
+                this.$store.dispatch('player/login',{playerId:this.userid, backNo:this.passwd})
             },
             moveToPasswd(){
                 document.getElementById('passwd').focus()
