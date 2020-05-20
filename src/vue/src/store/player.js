@@ -8,12 +8,12 @@ const state = {
 }
 
 const actions = {
-   async login_button({commit}) {
-       const url = state.context+`/access`
+   async login({commit},payload) {
+       const url = state.context+`players/${payload.playerId}/access`
        const headers = {
-           'Content-Type': 'application/json',
-           'authorization' : 'JWT fefege..',
-           'Accept' : 'application/json'
+           authorization: 'JWT fefege..',
+           Accept : 'application/json',
+           'Content-Type': 'application/json'
        }
         axios.post(url, state.player, headers)
             .then(({data})=>{

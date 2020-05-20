@@ -8,9 +8,9 @@
             <input type="text" @keyup.enter="moveToPasswd" v-model="userid" placeholder="Enter Username" required>
             <h3>입력한 아이디: {{userid}}</h3>
             <label><b>Password</b></label>
-            <input type="password" @keyup.enter="login_button" v-model="passwd" placeholder="Enter Password" id="passwd" required>
+            <input type="password" @keyup.enter="login" v-model="passwd" placeholder="Enter Password" id="passwd" required>
             <h3>입력한 비번: {{passwd}}</h3>
-            <button type="submit" @click="login_button">Login</button>
+            <button type="submit" @click="login">Login</button>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
@@ -40,8 +40,8 @@
             }
         },
         methods: {
-            login_button(){
-                this.$store.dispatch('player/login',{playerId:this.userid, backNo:this.passwd})
+            login(){
+                this.$store.dispatch('player/login', {playerId:this.userid, backNo:this.passwd})
             },
             moveToPasswd(){
                 document.getElementById('passwd').focus()
