@@ -24,7 +24,15 @@
 </template>
 
 <script>
+    import  {mapState} from 'vuex'
     export default {//return
+        computed: {
+            ...mapState(
+                {fail: state => state.player.fail,
+                    auth: state => state.player.auth
+                }
+            )
+        },
         data(){
             return {
                 userid : '',
