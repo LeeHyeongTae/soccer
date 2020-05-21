@@ -20,7 +20,7 @@ const actions = {
                 if(data.result){
                 commit('LOGIN_COMMIT', data)
                 }else{
-                commit('fail_commit')
+                commit('FAIL_COMMIT')
                 }
             })
             .catch(()=>{
@@ -28,6 +28,10 @@ const actions = {
                 state.fail = true
             })
     },
+    async logout({commit}) {
+       alert('로그아웃2')
+       commit('LOGOUT_COMMIT')
+    }
 }
 const mutations = {
     LOGIN_COMMIT(state, data){
@@ -42,6 +46,20 @@ const mutations = {
             alert('관리자')
             //관리 router.push('/')
         }
+    },
+    FAIL_COMMIT(state){
+        state.fail = true
+        if(state.fail != true){
+            alert('로그인 실패')
+        }else {
+            router.push('/loginFail')
+        }
+    },
+    LOGOUT_COMMIT(state){
+        alert('로그아웃3')
+        localStorage.clear()
+        state.auth = false
+        state.player = {}
     }
 }
 const getters = {
