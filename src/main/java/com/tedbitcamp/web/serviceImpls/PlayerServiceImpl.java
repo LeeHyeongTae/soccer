@@ -17,4 +17,9 @@ public class PlayerServiceImpl implements PlayerService {
     public List<PlayerDTO> retriveAll() {
         return playerMapper.selectAll();
     }
+
+    @Override
+    public PlayerDTO login(PlayerDTO parms) {
+        return playerMapper.login(parms);
+    }
 }

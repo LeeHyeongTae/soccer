@@ -8,4 +8,6 @@ import java.util.List;
 @Component
 public interface PlayerService {
     public List<PlayerDTO> retriveAll();
+
+    public PlayerDTO login(PlayerDTO parms);
 }

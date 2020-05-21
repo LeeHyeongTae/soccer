@@ -110,4 +110,23 @@ public class PlayerDTO {
  public void setTeamId(String teamId) {
   this.teamId = teamId;
  }
+
+ @Override
+ public String toString() {
+  return "PlayerDTO{" +
+          "playerId='" + playerId + '\'' +
+          ", playerName='" + playerName + '\'' +
+          ", ePlayerName='" + ePlayerName + '\'' +
+          ", nickname='" + nickname + '\'' +
+          ", joinYyyy='" + joinYyyy + '\'' +
+          ", position='" + position + '\'' +
+          ", backNo='" + backNo + '\'' +
+          ", nation='" + nation + '\'' +
+          ", birthDate='" + birthDate + '\'' +
+          ", solar='" + solar + '\'' +
+          ", height='" + height + '\'' +
+          ", weight='" + weight + '\'' +
+          ", teamId='" + teamId + '\'' +
+          '}';
+ }
 }

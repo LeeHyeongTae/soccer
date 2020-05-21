@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import router from '../router'
 const state = {
     context: 'http://localhost:3000/',
     player : {},
@@ -15,13 +15,16 @@ const actions = {
            Accept : 'application/json',
            'Content-Type': 'application/json'
        }
-        axios.post(url, state.player, headers)
+        axios.post(url, payload, headers)
             .then(({data})=>{
-                alert('자바 다녀옴')
+                if(data.result){
                 commit('LOGIN_COMMIT', data)
+                }else{
+                commit('fail_commit')
+                }
             })
             .catch(()=>{
-                alert('전송 실패')
+                alert('서버 전송 실패')
                 state.fail = true
             })
     },
@@ -32,9 +35,9 @@ const mutations = {
         state.player = data.player
         localStorage.setItem('token', data.token)
         localStorage.setItem('playerId', data.player.playerId)
-        if(data.player.auth === 'USER'){
+        if(data.player.teamId !== 'K01'){
             alert('일반사용자')
-            //일반사용자 router.push('/')
+            router.push('/')
         }else{
             alert('관리자')
             //관리 router.push('/')

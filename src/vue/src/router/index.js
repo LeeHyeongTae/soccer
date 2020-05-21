@@ -10,6 +10,7 @@ import Search from "../components/member/Search";
 import Update from "../components/member/Update";
 import Delete from "../components/member/Delete";
 import VuexCounter from "../components/common/VuexCounter";
+import MyPage from "../components/member/MyPage";
 
 Vue.use(VueRouter)
 export default new VueRouter({
@@ -24,6 +25,7 @@ export default new VueRouter({
         {path: '/list', component: List},
         {path: '/search', component: Search},
         {path: '/update', component: Update},
-        {path: '/delete', component: Delete}
+        {path: '/delete', component: Delete},
+        {path: '/mypage', component: MyPage},
     ]
 })

@@ -5,7 +5,9 @@ import com.tedbitcamp.web.services.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins ="*", allowedHeaders = "*")
 @RestController
@@ -16,13 +18,21 @@ public class PlayerController {
 
     @GetMapping("")
     public List<PlayerDTO> getList(){ return playerService.retriveAll(); }
+
     @PostMapping("/{playerId}/access")
-    public PlayerDTO login(
+    public Map<String,Object> login(
             @PathVariable String playerId,
-            @RequestBody PlayerDTO parms) {
-        System.out.println("뷰와 연결 아이디는:" + playerId);
-        System.out.println("뷰와 연결 비밀번호는:" + parms.getBackNo());
-        return player;
+            @RequestBody PlayerDTO parms
+    ) {
+        Map<String,Object> map = new HashMap<>();
+        player = playerService.login(parms);
+        if(player != null){
+        map.put("result", true);
+        }else {
+        map.put("result", false);
+        }
+        map.put("player", player);
+        return map;
     }
 
 }
