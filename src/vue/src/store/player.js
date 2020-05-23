@@ -29,7 +29,6 @@ const actions = {
             })
     },
     async logout({commit}) {
-       alert('로그아웃2')
        commit('LOGOUT_COMMIT')
     }
 }
@@ -56,7 +55,6 @@ const mutations = {
         }
     },
     LOGOUT_COMMIT(state){
-        alert('로그아웃3')
         localStorage.clear()
         state.auth = false
         state.player = {}
